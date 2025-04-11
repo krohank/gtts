@@ -22,15 +22,17 @@ def speak():
     # Convert the text to speech using gTTS with English as the chosen language
     tts = gTTS(text=text, lang='en')
     
-    # Define the output path for your generated audio file.
-    # Here we're saving it in the "static" folder so it can be easily served.
+    # Define the output path for your generated audio file
+    # Save the file in the "static" folder so it can be easily served
     output_path = os.path.join("static", "output.mp3")
     tts.save(output_path)
     
-    # Return the generated MP3 file with the appropriate MIME type.
-    # Your browser should play the audio or prompt for download.
+    # Return the generated MP3 file with the appropriate MIME type
+    # Your browser should play the audio or prompt for download
     return send_file(output_path, mimetype='audio/mpeg')
 
 if __name__ == '__main__':
-    # Run the app in debug mode for development.
-    app.run(debug=True)
+    # Get the port from environment variables or use default port 5000
+    port = int(os.getenv("PORT", 5000))
+    # Run the app with host set to '0.0.0.0' for public access
+    app.run(host="0.0.0.0", port=port, debug=False)
