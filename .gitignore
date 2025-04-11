@@ -1,0 +1,23 @@
+# Python-related files
+*.pyc
+__pycache__/
+
+# Virtual environment folder
+venv/
+
+# Audio output files
+static/output.mp3
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE and text editor settings
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
